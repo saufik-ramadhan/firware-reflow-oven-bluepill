@@ -1,0 +1,9 @@
+[
+  {
+    "name": "stm32cubeclt Toolchain",
+    "compilers": {
+      "C": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe",
+      "CXX": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-g++.exe"
+    }
+  }
+]

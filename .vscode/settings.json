@@ -1,0 +1,12 @@
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\Ninja\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STM32CubeProgrammer\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STLink-gdb-server\\bin;${env:PATH}"
+  },
+  "cmake.additionalKits": [
+    "${workspaceFolder}/.vscode/cmake-kits.json"
+  ],
+  "C_Cpp.default.compilerPath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe",
+  "cmake.configureArgs": [
+    "-DCMAKE_MAKE_PROGRAM=D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\Ninja\\bin\\ninja.exe"
+  ]
+}

@@ -54,6 +54,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/encoder.c
     Core/Src/hardware_test.c
     Core/Src/heater_characterization.c
+    Core/Src/ht_heater.c
+    Core/Src/ht_pid.c
+    Core/Src/ht_sensor.c
+    Core/Src/ht_ui.c
     Core/Src/inspection.c
     Core/Src/motor.c
     Core/Src/pcb_sensor.c

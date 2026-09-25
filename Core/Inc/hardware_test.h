@@ -35,6 +35,7 @@ typedef struct
   uint8_t fan_duty_percent;
   uint8_t pid_running;
   uint8_t pid_fault;
+  uint8_t thermal_runaway_fault;
 } HardwareTestStatus;
 
 void HardwareTest_Init(void);

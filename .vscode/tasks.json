@@ -1,0 +1,173 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "cwd": "${workspaceFolder}",
+    "env": {
+      "PATH": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\Ninja\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STM32CubeProgrammer\\bin;D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STLink-gdb-server\\bin;${env:PATH}"
+    }
+  },
+  "tasks": [
+    {
+      "label": "CMake: Configure (Debug)",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe",
+      "args": [
+        "--preset",
+        "Debug"
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Build (Debug)",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe",
+      "args": [
+        "--build",
+        "build/Debug"
+      ],
+      "dependsOn": [
+        "CMake: Configure (Debug)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Prepare Flash via HID (Debug) #1",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-objcopy.exe",
+      "args": [
+        "-O",
+        "binary",
+        "${workspaceFolder}/build/Debug/test-bluepill-1.elf",
+        "${workspaceFolder}/build/Debug/test-bluepill-1.bin"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash via HID (Debug)",
+      "type": "shell",
+      "command": "D:\\LEARN\\kcci-stm\\test_project_cv\\blue-pill\\stm32-vscode-init\\tools\\hid-flash\\bin\\windows\\hid-flash.exe",
+      "args": [
+        "${workspaceFolder}/build/Debug/test-bluepill-1.bin",
+        "COM30"
+      ],
+      "problemMatcher": [],
+      "group": "build",
+      "dependsOn": [
+        "Prepare Flash via HID (Debug) #1"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "Build + Flash via HID (Debug)",
+      "dependsOn": [
+        "Build (Debug)",
+        "Flash via HID (Debug)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Clean (Debug)",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe",
+      "args": [
+        "--build",
+        "build/Debug",
+        "--target",
+        "clean"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: Configure (Release)",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe",
+      "args": [
+        "--preset",
+        "Release"
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Build (Release)",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe",
+      "args": [
+        "--build",
+        "build/Release"
+      ],
+      "dependsOn": [
+        "CMake: Configure (Release)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Prepare Flash via HID (Release) #1",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-objcopy.exe",
+      "args": [
+        "-O",
+        "binary",
+        "${workspaceFolder}/build/Release/test-bluepill-1.elf",
+        "${workspaceFolder}/build/Release/test-bluepill-1.bin"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash via HID (Release)",
+      "type": "shell",
+      "command": "D:\\LEARN\\kcci-stm\\test_project_cv\\blue-pill\\stm32-vscode-init\\tools\\hid-flash\\bin\\windows\\hid-flash.exe",
+      "args": [
+        "${workspaceFolder}/build/Release/test-bluepill-1.bin",
+        "COM30"
+      ],
+      "problemMatcher": [],
+      "group": "build",
+      "dependsOn": [
+        "Prepare Flash via HID (Release) #1"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "Build + Flash via HID (Release)",
+      "dependsOn": [
+        "Build (Release)",
+        "Flash via HID (Release)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Clean (Release)",
+      "type": "shell",
+      "command": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe",
+      "args": [
+        "--build",
+        "build/Release",
+        "--target",
+        "clean"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

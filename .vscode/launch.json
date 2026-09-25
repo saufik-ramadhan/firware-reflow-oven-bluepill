@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug (Build + Flash)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/Debug/test-bluepill-1.elf",
+      "device": "STM32F103C8T6",
+      "runToEntryPoint": "main",
+      "servertype": "stlink",
+      "interface": "swd",
+      "serverpath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STLink-gdb-server\\bin\\ST-LINK_gdbserver.exe",
+      "armToolchainPath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin",
+      "gdbPath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gdb.exe",
+      "stm32cubeprogrammer": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STM32CubeProgrammer\\bin",
+      "svdFile": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STMicroelectronics_CMSIS_SVD\\STM32F103.svd",
+      "preLaunchTask": "Build (Debug)"
+    },
+    {
+      "name": "Debug (No Rebuild)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/Debug/test-bluepill-1.elf",
+      "device": "STM32F103C8T6",
+      "runToEntryPoint": "main",
+      "servertype": "stlink",
+      "interface": "swd",
+      "serverpath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STLink-gdb-server\\bin\\ST-LINK_gdbserver.exe",
+      "armToolchainPath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin",
+      "gdbPath": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gdb.exe",
+      "stm32cubeprogrammer": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STM32CubeProgrammer\\bin",
+      "svdFile": "D:\\Citra\\stmclt\\STM32CubeCLT_1.22.0\\STMicroelectronics_CMSIS_SVD\\STM32F103.svd"
+    }
+  ]
+}
